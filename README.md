@@ -1,2 +1,2 @@
-## SMART WASTE MANAGEMENT SYSTEM
-# project initiated
+# SMART WASTE MANAGEMENT SYSTEM
+ project initiated
