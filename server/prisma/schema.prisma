@@ -15,10 +15,15 @@ model User {
   password        String
   role            Role             @default(CITIZEN)
   points          Int              @default(0)
+  address         String?          // Added for profile page
+  phoneNumber     String?          // Added for profile page
+  preferredPickupTime String?      // Added for profile page
+  profileImageUrl String?          // Added for profile page
   createdAt       DateTime         @default(now())
   updatedAt       DateTime         @updatedAt
   pickupRequests  PickupRequest[]
   notifications   Notification[]
+  rewardRedemptions RewardRedemption[] // Added for rewards system
 }
 
 model PickupRequest {
@@ -78,6 +83,28 @@ model Notification {
   type            String           // e.g., 'INFO', 'WARNING', 'ERROR', 'PICKUP'
   read            Boolean          @default(false)
   createdAt       DateTime         @default(now())
+}
+
+model Reward {
+  id              String           @id @default(uuid())
+  name            String
+  description     String
+  pointsCost      Int
+  imageUrl        String?
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  redemptions     RewardRedemption[]
+}
+
+model RewardRedemption {
+  id              String           @id @default(uuid())
+  userId          String
+  user            User             @relation(fields: [userId], references: [id])
+  rewardId        String
+  reward          Reward           @relation(fields: [rewardId], references: [id])
+  pointsCost      Int              // Store the cost at time of redemption
+  redeemedAt      DateTime         @default(now())
 }
 
 enum Role {
