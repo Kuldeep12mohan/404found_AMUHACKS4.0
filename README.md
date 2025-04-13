@@ -37,7 +37,7 @@ A web application designed to improve waste collection efficiency and promote su
 | Map         | Leaflet.js                         |
 | Image AI    | Google Vision API                  |
 | State/API   | React Context API, React Query     |
-| Deployment  | Netlify (Frontend), Render (Backend) |
+| Deployment  | Vercel (Frontend), Render (Backend) |
 
 ---
 
