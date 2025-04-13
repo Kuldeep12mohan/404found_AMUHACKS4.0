@@ -50,5 +50,5 @@ A web application designed to improve waste collection efficiency and promote su
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/Kuldeep12mohan/smart-server.git
-cd smart-server
+git clone https://github.com/Kuldeep12mohan/404found_AMUHACKS4.0.git
+cd 404found_AMUHACK4.0
